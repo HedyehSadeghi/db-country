@@ -87,12 +87,7 @@ where c.name = 'Italy';
 
 -- 13. Per la regione Antarctica mostrare il valore dell’area totale e dell’area media delle nazioni
 
-select sum(c.area) as antarctita_area
-from regions r 
-join countries c on r.region_id = c.region_id 
-where r.name ='Antarctica';
-
-select avg (c.area)
+select sum(c.area) as antarctita_area, avg (c.area) as average_countries_area
 from regions r 
 join countries c on r.region_id = c.region_id 
 where r.name ='Antarctica';
