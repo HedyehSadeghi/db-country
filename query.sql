@@ -73,12 +73,12 @@ where c.name= 'italy';
 -- 11. Selezionare le nazioni il cui national day è avvenuto prima del 1900, ordinate per national day dal più recente al meno recente
 select *
 from countries c 
-where c.national_day <= '1900-01-01'
+where c.national_day < '1900-01-01'
 order by c.national_day desc ;
 
 
 -- 12. Contare quante lingue sono parlate in Italia
-select l.`language` as all_languages_in_italy
+select count(l.`language`) as all_languages_in_italy
 from countries c 
 join country_languages cl on c.country_id =cl.country_id 
 join languages l on cl.language_id =l.language_id 
@@ -91,4 +91,5 @@ select sum(c.area) as antarctita_area, avg (c.area) as average_countries_area
 from regions r 
 join countries c on r.region_id = c.region_id 
 where r.name ='Antarctica';
+
 
