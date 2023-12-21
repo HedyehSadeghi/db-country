@@ -92,7 +92,7 @@ from regions r
 join countries c on r.region_id = c.region_id 
 where r.name ='Antarctica';
 
-select c.name as country , c.area , r.name  as region
+select avg (c.area)
 from regions r 
 join countries c on r.region_id = c.region_id 
 where r.name ='Antarctica';
